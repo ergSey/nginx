@@ -1,0 +1,42 @@
+upstream backend {
+  server app1.6e74db9ce73d0fc1f6b4462569483786.kis.im:80;
+  server app2.6e74db9ce73d0fc1f6b4462569483786.kis.im:80;
+
+  check interval=3000 rise=2 fall=5 timeout=1000 type=http;
+  check_http_send "GET /index.html HTTP/1.0\r\n\r\n";
+  check_http_expect_alive http_2xx http_3xx;
+}
+
+server {
+  listen 443 ssl http2;
+  server_name app.6e74db9ce73d0fc1f6b4462569483786.kis.im;
+
+  ssl_certificate /etc/letsencrypt/live/app.6e74db9ce73d0fc1f6b4462569483786.kis.im/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/app.6e74db9ce73d0fc1f6b4462569483786.kis.im/privkey.pem;
+
+  location / {
+    root /opt;
+    index index.html;
+  }
+
+  location /app {
+    access_log /var/log/nginx/access.format.log format;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    add_header X-Forwarded-For $remote_addr;
+    proxy_pass http://backend;
+  }
+}
+
+server {
+  listen 80;
+  server_name app.6e74db9ce73d0fc1f6b4462569483786.kis.im;
+
+  location /.well-known/acme-challenge {
+    root /opt/www/acme/;
+  }
+
+  location / {
+    return 301 https://app.6e74db9ce73d0fc1f6b4462569483786.kis.im$request_uri;
+  }
+}
