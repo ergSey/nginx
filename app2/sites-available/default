@@ -1,0 +1,11 @@
+server {
+   listen 80 default_server;
+   server_name app2.6e74db9ce73d0fc1f6b4462569483786.kis.im;
+
+   location = /app {
+      access_log /var/log/nginx/access.realip.log realip;
+      real_ip_header X-Forwarded-For;
+      add_header X-Real-IP $http_x_real_ip;
+      proxy_pass http://127.0.0.1:8080;
+   }
+}
