@@ -1,0 +1,11 @@
+root@lb1:/etc/nginx# tail -10 /var/log/nginx/access.format.log
+GET /app HTTP/2.0 0.003 0.004
+GET /app HTTP/2.0 0.003 0.000
+GET /app HTTP/2.0 0.004 0.004
+GET /app HTTP/2.0 0.002 0.000
+GET /app HTTP/2.0 0.003 0.000
+GET /app HTTP/2.0 0.003 0.000
+GET /app HTTP/2.0 0.004 0.004
+GET /app HTTP/2.0 0.003 0.000
+GET /app HTTP/2.0 0.004 0.004
+GET /app HTTP/2.0 0.003 0.004
