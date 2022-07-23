@@ -1,0 +1,65 @@
+PS C:\Users\Sergey> curl -v app.6e74db9ce73d0fc1f6b4462569483786.kis.im/app
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : Hostname: app1
+                    IP: 127.0.0.1
+                    IP: ::1
+                    IP: 159.223.14.119
+                    IP: 10.18.0.7
+                    IP: fe80::7808:e2ff:fec6:4113
+                    IP: 10.110.0.4
+                    IP: fe80::5853:3eff:fe3d:2430
+                    RemoteAddr: 127.0.0.1:54690
+                    GET /app HTTP/1.1
+                    Host: 12...
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    X-Real-IP: 176.192.148.122
+                    X-Forwarded-For: 176.192.148.122
+                    Content-Length: 391
+                    Content-Type: text/plain; charset=utf-8
+                    Date: Sat, 23 Jul 2022 13:49:57 GMT...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [X-Real-IP, 176.192.148.122], [X-Forwarded-For, 176.192.148.122], [Content-Length, 391]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 391
+
+
+
+PS C:\Users\Sergey> curl -v app.6e74db9ce73d0fc1f6b4462569483786.kis.im/app
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : Hostname: app2
+                    IP: 127.0.0.1
+                    IP: ::1
+                    IP: 159.223.225.8
+                    IP: 10.18.0.8
+                    IP: fe80::f087:25ff:fea3:418d
+                    IP: 10.110.0.5
+                    IP: fe80::e426:2dff:fe17:6beb
+                    RemoteAddr: 127.0.0.1:52832
+                    GET /app HTTP/1.1
+                    Host: 127...
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    X-Real-IP: 176.192.148.122
+                    X-Forwarded-For: 176.192.148.122
+                    Content-Length: 390
+                    Content-Type: text/plain; charset=utf-8
+                    Date: Sat, 23 Jul 2022 13:49:59 GMT...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [X-Real-IP, 176.192.148.122], [X-Forwarded-For, 176.192.148.122], [Content-Length, 390]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 390
+
+
+
+PS C:\Users\Sergey>
